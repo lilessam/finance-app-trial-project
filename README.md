@@ -2,21 +2,34 @@
 
 This project proposal has been put together to help developers who are applying for new positions but don't have any sample code to provide during the hiring process.
 
+We've put together a basic Laravel starter app, which includes authentication scaffolding. To get started, run the following commands:
+
+```
+composer install
+php artisan migrate
+npm install
+npm run dev
+```
+
+After signing up, you'll be redirected to the user's dashboard. This is a static HTML representation of the provided mockups built using Tailwind CSS.
+
 ## Requirements
 
-The trial project is split into two phases. This helps to break the project into smaller, more manageable chunks. It also allows us to provide you with project feedback along the way.
+The trial project should be built using Laravel and Vue.js and should demonstrate your abilities with these frameworks.
 
-The trial project should be built using Laravel and Vue.js and should demonstrate your abilities with these frameworks. We will also be looking at how accurately you can implement high fidelity mockups.
+### Dashboard
 
-### Phase 1
-
-A list of the user's balance entries should be shown by default. Entries should be grouped by date. Although pagination is missing from the mockups, please add basic pagination for when more than 100 entries exist.
+A list of the user's balance entries should be shown by default. Entries should be grouped by date. Although pagination is missing from the mockups, feel free to add basic pagination if you get time.
 
 ![](mockups/yourbalance-1-default@2x.png)
+
+### Add Entry
 
 A user should be able to add single balance entries. Adding a new entry should update the balance list and the total balance.
 
 ![](mockups/yourbalance-2-add-item-modal@2x.png)
+
+### Edit & Delete Entry
 
 Hovering over an entry should show the edit and delete links.
 
@@ -28,18 +41,7 @@ Clicking 'Delete' should remove the entry from the list and update the total bal
 
 Clicking 'Update Entry' should update the balance list and update the total balance.
 
-### Phase 1 Delivery
-
-Once you've completed phase 1, you should deliver it for feedback before continuing on to phase 2.
-
-1. Create an empty GitHub repo for your project (public or private, up to you)
-1. If the repo is private, grant @A5hleyRich @gilbitron @bradt access
-1. Create a `phase1` branch and make all your commits to that branch
-1. When it's ready for review, push the `phase1` branch to GitHub
-1. Open a pull request to merge `phase1` into the `master` branch and mention @A5hleyRich in the PR comment
-1. Reply to our email to let us know you've mentioned Ash in the PR
-
-### Phase 2
+### Import Entries
 
 A [CSV file](data/5000-balance-entries.csv) of entries can be imported. The import should happen in the background. The 'Add Entry' and 'Import CSV' buttons should be disabled while the import is working, however, existing entries can be edited or deleted.
 
@@ -49,9 +51,11 @@ Imported entries should not appear in the balance list, until the entire import 
 
 ![](mockups/yourbalance-7-csv-uploading@2x.png)
 
-### Phase 2 Delivery
+## Delivery
 
-1. Create a new `phase2` branch off of the `phase1` branch and make all your Phase 2 commits to it
-1. When it's ready for review, push the `phase2` branch to GitHub
-1. Open a pull request to merge `phase2` into the `phase1` branch and mention @A5hleyRich in the PR comment
+1. Fork this repo
+1. If the repo is private, grant @A5hleyRich and @bradt access
+1. Create a new branch and make all your commits to that branch
+1. When it's ready for review, push the branch to GitHub
+1. Open a pull request to merge your branch into the `master` branch and mention @A5hleyRich in the PR comment
 1. Reply to our email to let us know you've mentioned Ash in the PR
