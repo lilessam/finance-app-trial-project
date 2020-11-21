@@ -11,7 +11,7 @@ npm install
 npm run dev
 ```
 
-After signing up, you'll be redirected to the user's dashboard. This is a static HTML representation of the provided mockups built using Tailwind CSS.
+After signing up, you'll be redirected to the user's dashboard. This is a static HTML representation of the [dashboard mockup](#dashboard) built using Tailwind CSS.
 
 ## Requirements
 
