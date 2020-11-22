@@ -53,6 +53,8 @@ Imported entries should not appear in the balance list, until the entire import 
 
 ## Delivery
 
+1. Please track your time to give us an idea of how long it took you to complete the project.
+1. It's not required, but you get massive bonus points if you record a screencast with commentary, showing us how you're thinking through the problems you face and how you tackle the project from start to finish.
 1. Fork this repo
 1. If the repo is private, grant @A5hleyRich and @bradt access
 1. Create a new branch and make all your commits to that branch
