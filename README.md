@@ -58,6 +58,6 @@ Imported entries should not appear in the balance list, until the entire import 
 1. Fork this repo
 1. If the repo is private, grant @A5hleyRich and @bradt access
 1. Create a new branch and make all your commits to that branch
-1. When it's ready for review, push the branch to GitHub
-1. Open a pull request to merge your branch into the `master` branch and mention @A5hleyRich in the PR comment
+1. When it's ready for review, push the branch to your GitHub repo
+1. Open a pull request against **your** repo to merge your branch into the `master` branch and mention @A5hleyRich in the PR comment
 1. Reply to our email to let us know you've mentioned Ash in the PR
