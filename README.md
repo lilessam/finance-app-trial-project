@@ -58,10 +58,10 @@ Imported entries should not appear in the balance list, until the entire import 
 1. Please track your time to give us an idea of how long it takes you to complete each phase of the project.
 1. It's not required, but you get massive bonus points if you record a screencast with commentary as you code this project, showing us how you're thinking through the problems you face and how you tackle the project from start to finish.
 1. Fork this repo
-1. If the repo is private, grant access to the following users: @A5hleyRich, @fehrge, @katelynnbarlowe
+1. If you make your forked repo private, grant access to the following users: @A5hleyRich, @fehrge, @katelynnbarlowe
 1. Create a new `phase1` branch off of the `master` branch and make all your commits for Phase 1 to that branch
 1. When it's ready for review, push the branch to your GitHub repo
-1. Open a pull request (PR) against **your** repo to merge your branch into the `master` branch
+1. Open a pull request (PR) against **your repo** (not deliciousbrains/finance-app-trial-project) to merge your branch into the `master` branch
 1. Reply to our email thread and let us know that Phase 1 is ready for review with a link to the PR and how much time you've put in so far
 1. Now you can either wait for our code review or continue with Phase 2, completely up to you
 1. When you're ready to proceed with Phase 2, create a new `phase2` branch off of the `phase1` branch
