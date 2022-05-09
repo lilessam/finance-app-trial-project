@@ -2,12 +2,11 @@
 
 namespace App\Repositories;
 
-use App\Models\Transaction;
-use App\Repositories\Contracts\TransactionRepository;
-use Carbon\Carbon;
+use App\Models\CSV;
+use App\Repositories\Contracts\CSVsRepository;
 use Closure;
 
-class Transactions extends Base implements TransactionRepository
+class CSVS extends Base implements CSVsRepository
 {
     /**
      * Determines the model.
@@ -16,7 +15,7 @@ class Transactions extends Base implements TransactionRepository
      */
     public function model()
     {
-        return Transaction::class;
+        return CSV::class;
     }
 
     /**
@@ -26,11 +25,7 @@ class Transactions extends Base implements TransactionRepository
      */
     public function all(...$args)
     {
-        return $this->model()::whereUserId($args[0])->orderBy('amount_date', 'desc')->get()->mapToGroups(function ($item) {
-            return [Carbon::parse($item['amount_date'])->diffForHumans() => $item];
-        })->mapWithKeys(function ($items, $key) {
-            return [$key => ['total' => $items->sum('amount'), 'items' => $items]];
-        });
+        return $this->model()::all();
     }
 
     /**
@@ -38,7 +33,7 @@ class Transactions extends Base implements TransactionRepository
      *
      * @param int
      *
-     * @return \App\Models\Transaction
+     * @return \App\Models\CSV
      */
     public function get($id)
     {
@@ -50,7 +45,7 @@ class Transactions extends Base implements TransactionRepository
      *
      * @param array
      *
-     * @return \App\Models\Transaction
+     * @return \App\Models\CSV
      */
     public function store(array $data)
     {
@@ -67,7 +62,7 @@ class Transactions extends Base implements TransactionRepository
      * @param int
      * @param array
      *
-     * @return \App\Models\Transaction
+     * @return \App\Models\CSV
      */
     public function update($id, array $data)
     {

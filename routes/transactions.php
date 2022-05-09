@@ -8,4 +8,5 @@ Route::middleware('auth')->group(function () {
     Route::post('/transactions', [TransactionsController::class, 'store']);
     Route::delete('/transactions/{id}', [TransactionsController::class, 'destroy']);
     Route::put('/transactions/{id}', [TransactionsController::class, 'update']);
+    Route::post('/transactions/import', [TransactionsController::class, 'import']);
 });

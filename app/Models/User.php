@@ -72,6 +72,16 @@ class User extends Authenticatable
     }
 
     /**
+     * Setup relation with CSV imports.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function csvs()
+    {
+        return $this->hasMany(CSV::class);
+    }
+
+    /**
      * Add `balance` attribute.
      *
      * @return float

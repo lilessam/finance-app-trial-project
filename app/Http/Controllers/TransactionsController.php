@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\TransactionStoreRequest;
 use App\Http\Requests\TransactionUpdateRequest;
+use App\Jobs\ProcessExcelImport;
 use App\Repositories\Contracts\TransactionRepository;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class TransactionsController extends Controller
 {
@@ -38,6 +41,7 @@ class TransactionsController extends Controller
     /**
      * Store transaction entry.
      *
+     * @param \App\Http\Requests\TransactionStoreReques $request
      * @return \Illuminate\Http\JsonResponse
      */
     public function store(TransactionStoreRequest $request)
@@ -58,6 +62,7 @@ class TransactionsController extends Controller
     /**
      * Update a transaction entry.
      *
+     * @param \App\Http\Requests\TransactionUpdateRequest $request
      * @return \Illuminate\Http\JsonResponse
      */
     public function update(string $id, TransactionUpdateRequest $request)
@@ -78,7 +83,6 @@ class TransactionsController extends Controller
      * Delete an entry from database.
      *
      * @param string $id
-     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($id)
@@ -87,6 +91,32 @@ class TransactionsController extends Controller
 
         return response()->json([
             'status' => true,
+        ], 200);
+    }
+
+    /**
+     * Import a CSV file.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function import(Request $request)
+    {
+        $path = $request->file('csv')->storeAs(
+            'csvs', $request->user()->id.'.csv'
+        );
+
+        $rows = get_csv_rows_count(Storage::path($path));
+
+        ProcessExcelImport::dispatch(
+            $request->user()->id,
+            $path,
+            $rows
+        );
+
+        return response()->json([
+            'status' => true,
+            'data' => $rows,
         ], 200);
     }
 }

@@ -35,3 +35,14 @@ export async function store(data) {
 export async function destroy(id) {
     return Axios.delete(`/transactions/${id}`);
 }
+
+/**
+ * Upload a CSV file import.
+ * @param \File file 
+ * @returns Promise <>
+ */
+export async function uploadImport(file) {
+    var payload = new FormData();
+    payload.append('csv', file);
+    return Axios.post('/transactions/import', payload, { headers: { 'Content-Type': 'multipart/form-data' } });
+}
